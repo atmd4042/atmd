@@ -6,10 +6,6 @@ on:
       - main
     paths:
       - "doc/**"
-      - "app.html"
-      - "supabase-config.js"
-      - "supabase-runtime.js"
-      - "supabase/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -31,12 +27,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Include Etemad application files
-        run: |
-          mkdir -p doc
-          cp app.html doc/app.html
-          cp supabase-config.js doc/supabase-config.js
-          cp supabase-runtime.js doc/supabase-runtime.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site
